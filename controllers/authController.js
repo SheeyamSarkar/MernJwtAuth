@@ -133,7 +133,7 @@ const resetPasswordController = async (req,res) => {
     }
 
     //compair password
-    if(newPassword != confirmNewPassword){
+    if(newPassword !== confirmNewPassword){
         return res.status(400).json({ success: false, msg: "Password Not Match!!"});
     }
 

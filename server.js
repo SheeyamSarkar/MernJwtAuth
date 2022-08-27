@@ -7,6 +7,7 @@ const app = express();
 const dbConnect = require("./config/dbConnect");
 
 const authAPI = require("./apis/authApi");
+const emailAPI = require("./apis/emailApi");
 
 
 //dbConnection
@@ -22,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //apis
 app.use("/api/auth", authAPI);
+app.use("/api/email", emailAPI);
 
 
 //port
