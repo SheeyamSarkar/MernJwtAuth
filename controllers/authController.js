@@ -141,7 +141,12 @@ const resetPasswordController = async (req,res) => {
         bcrypt.hash(newPassword, salt, async (err, hash)=> {
             const hashedPassword = hash;
 
-            const updatedData = await User.findByIdAndUpdate({email},{
+            // const updatedData = await User.findByIdAndUpdate({email},{
+            //     $set:{
+            //         password: hashedPassword,
+            //     },
+            // });
+            const updatedData = await User.findByIdAndUpdate({_id: oldUser._id},{
                 $set:{
                     password: hashedPassword,
                 },

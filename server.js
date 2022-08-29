@@ -8,6 +8,7 @@ const dbConnect = require("./config/dbConnect");
 
 const authAPI = require("./apis/authApi");
 const emailAPI = require("./apis/emailApi");
+const employeeAPI = require("./apis/employeeApi");
 
 
 //dbConnection
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //apis
 app.use("/api/auth", authAPI);
 app.use("/api/email", emailAPI);
+app.use("/api/employee", employeeAPI);
 
 
 //port
